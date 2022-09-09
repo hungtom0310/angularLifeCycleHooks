@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -7,6 +7,8 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit, OnChanges {
   isChild = true;
+  channelName = '';
+
   constructor() {
     console.log('1.Parent Contructor is called.');
   }
