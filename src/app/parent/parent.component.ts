@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent implements OnInit {
+  isChild = false;
   constructor() {
     console.log('1.Parent Contructor is called.');
   }
@@ -13,6 +14,7 @@ export class ParentComponent implements OnInit {
   ngOnInit(): void {
     console.log('1.Parent OnInit is called.');
   }
-
-  
+  toggleChild() {
+    this.isChild = !this.isChild;
+  }
 }

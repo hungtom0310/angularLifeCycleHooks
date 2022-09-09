@@ -1,1 +1,4 @@
 <h1>Component Parent</h1>
+<button (click)="toggleChild()">Toggle Child</button>
+
+<app-child *ngIf="isChild"></app-child>
