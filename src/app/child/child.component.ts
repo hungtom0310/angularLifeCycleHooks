@@ -1,5 +1,6 @@
 import {
   Component,
+  DoCheck,
   Input,
   OnChanges,
   OnDestroy,
@@ -12,7 +13,7 @@ import {
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
 })
-export class ChildComponent implements OnInit, OnDestroy, OnChanges {
+export class ChildComponent implements OnInit, OnDestroy, OnChanges, DoCheck {
   counter = 0;
   interval: any;
 
@@ -37,5 +38,9 @@ export class ChildComponent implements OnInit, OnDestroy, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('3.Child OnChanges is called.', changes);
+  }
+
+  ngDoCheck(): void {
+    console.log('4.Child DoCheck is called.');
   }
 }

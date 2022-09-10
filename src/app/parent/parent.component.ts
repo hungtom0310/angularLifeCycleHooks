@@ -1,11 +1,11 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.scss'],
 })
-export class ParentComponent implements OnInit, OnChanges {
+export class ParentComponent implements OnInit, OnChanges, DoCheck {
   isChild = true;
   channelName = '';
 
@@ -20,6 +20,11 @@ export class ParentComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     console.log('3.Parent OnChanges is called.');
   }
+
+  ngDoCheck(): void {
+    console.log('4.Parent DoCheck is called.');
+  }
+
   toggleChild() {
     this.isChild = !this.isChild;
   }
