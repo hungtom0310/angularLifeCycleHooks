@@ -35,7 +35,7 @@ export class ChildComponent implements OnInit, OnDestroy, OnChanges {
     console.log('2.Child OnDestroy is called.');
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('3.Child OnChanges is called.', changes);
+  ngOnChanges(): void {
+    console.log('3.Child OnChanges is called.');
   }
 }
