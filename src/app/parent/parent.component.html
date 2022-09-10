@@ -4,5 +4,7 @@
 
 <input type="text" [(ngModel)]="channelName" />
 
-<app-child *ngIf="isChild" [channelName]="channelName"></app-child>
+<app-child *ngIf="isChild" [channelName]="channelName">
+    <h2 #projectedContent>Hãy Subcribe Website</h2>
+</app-child>
 
