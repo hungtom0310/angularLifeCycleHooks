@@ -9,6 +9,8 @@ import {
   OnDestroy,
   OnInit,
   SimpleChanges,
+  AfterViewInit,
+  AfterViewChecked,
 } from '@angular/core';
 
 @Component({
@@ -23,7 +25,9 @@ export class ChildComponent
     OnChanges,
     DoCheck,
     AfterContentInit,
-    AfterContentChecked
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked
 {
   counter = 0;
   interval: any;
@@ -61,5 +65,11 @@ export class ChildComponent
   }
   ngAfterContentChecked(): void {
     console.log('7.In After Content Checked');
+  }
+  ngAfterViewInit(): void {
+    console.log('8.In After View Init');
+  }
+  ngAfterViewChecked(): void {
+    console.log('9.In After View Checked');
   }
 }
