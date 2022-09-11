@@ -1,4 +1,5 @@
 import {
+  AfterContentChecked,
   AfterContentInit,
   Component,
   ContentChild,
@@ -16,7 +17,13 @@ import {
   styleUrls: ['./child.component.scss'],
 })
 export class ChildComponent
-  implements OnInit, OnDestroy, OnChanges, DoCheck, AfterContentInit
+  implements
+    OnInit,
+    OnDestroy,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked
 {
   counter = 0;
   interval: any;
@@ -51,5 +58,8 @@ export class ChildComponent
   ngAfterContentInit(): void {
     console.log('5.In After Content Init');
     console.log('6.After Content Init - ' + this.protectedContent);
+  }
+  ngAfterContentChecked(): void {
+    console.log('7.In After Content Checked');
   }
 }
