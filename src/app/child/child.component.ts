@@ -11,6 +11,8 @@ import {
   SimpleChanges,
   AfterViewInit,
   AfterViewChecked,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 
 @Component({
@@ -35,41 +37,47 @@ export class ChildComponent
   @Input()
   channelName = '';
 
+  @Output() buttonClick: EventEmitter<any> = new EventEmitter<any>();
+
   @ContentChild('projectedContent') protectedContent: any;
 
   constructor() {
-    console.log('1.Child Contructor is called.');
+    // console.log('1.Child Contructor is called.');
   }
 
   ngOnInit(): void {
     console.log('1.Child OnInit is called.');
-    console.log('6.OnInit - ' + this.protectedContent);
+    // console.log('6.OnInit - ' + this.protectedContent);
   }
   ngOnDestroy(): void {
     // clearInterval(this.interval);
-    console.log('2.Child OnDestroy is called.');
+    // console.log('2.Child OnDestroy is called.');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('3.Child OnChanges is called.', changes);
-    console.log('6.OnChanges - ' + this.protectedContent);
+    // console.log('3.Child OnChanges is called.', changes);
+    // console.log('6.OnChanges - ' + this.protectedContent);
   }
 
   ngDoCheck(): void {
-    console.log('4.Child DoCheck is called.');
-    console.log('6.DoCheck - ' + this.protectedContent);
+    // console.log('4.Child DoCheck is called.');
+    // console.log('6.DoCheck - ' + this.protectedContent);
   }
   ngAfterContentInit(): void {
-    console.log('5.In After Content Init');
-    console.log('6.After Content Init - ' + this.protectedContent);
+    // console.log('5.In After Content Init');
+    // console.log('6.After Content Init - ' + this.protectedContent);
   }
   ngAfterContentChecked(): void {
-    console.log('7.In After Content Checked');
+    // console.log('7.In After Content Checked');
   }
   ngAfterViewInit(): void {
-    console.log('8.In After View Init');
+    // console.log('8.In After View Init');
   }
   ngAfterViewChecked(): void {
-    console.log('9.In After View Checked');
+    // console.log('9.In After View Checked');
+  }
+  onButtonClicked() {
+    this.channelName = 'xin chao output';
+    this.buttonClick.emit(this.channelName);
   }
 }

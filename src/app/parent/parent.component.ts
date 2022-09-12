@@ -8,6 +8,7 @@ import { Component, DoCheck, Input, OnChanges, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit, OnChanges, DoCheck {
   isChild = true;
   channelName = '';
+  tittle = 'Đây là demo Output';
 
   constructor() {
     console.log('1.Parent Contructor is called.');
@@ -16,16 +17,20 @@ export class ParentComponent implements OnInit, OnChanges, DoCheck {
   ngOnInit(): void {
     console.log('1.Parent OnInit is called.');
   }
-
+  onButtonClickedForm(event: string) {
+    console.log({ event }, 'click from child');
+    this.tittle = event;
+  }
   ngOnChanges(): void {
-    console.log('3.Parent OnChanges is called.');
+    // console.log('3.Parent OnChanges is called.');
   }
 
   ngDoCheck(): void {
-    console.log('4.Parent DoCheck is called.');
+    // console.log('4.Parent DoCheck is called.');
   }
 
   toggleChild() {
     this.isChild = !this.isChild;
+    this.tittle = 'Đây là demo Output';
   }
 }

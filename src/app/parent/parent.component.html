@@ -1,10 +1,14 @@
 <h1>Component Parent</h1>
+<h1>{{ tittle }}</h1>
 
 <button (click)="toggleChild()">Toggle Child</button>
 
 <input type="text" [(ngModel)]="channelName" />
 
-<app-child *ngIf="isChild" [channelName]="channelName">
-    <h2 #projectedContent>Hãy Subcribe Website</h2>
+<app-child
+  *ngIf="isChild"
+  [channelName]="channelName"
+  (buttonClick)="onButtonClickedForm($event)"
+>
+  <h2 #projectedContent>Hãy Subcribe Website</h2>
 </app-child>
-
